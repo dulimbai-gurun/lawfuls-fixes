@@ -918,7 +918,6 @@ country_event = {
 		name = "EVTOPTA36726"
 		badboy = -2
 		prestige = 5
-		3313 = { remove_core = NET remove_core = BEL secede_province = FROM add_core = FROM } #Venlo
 		PRU = { inherit = MRN } #Moresnet
 		3320 = { add_core = FROM }
 		3318 = { remove_core = NET remove_core = WLL } #Arlon
