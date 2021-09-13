@@ -624,4 +624,74 @@ political_decisions = {
 
 		ai_will_do = { factor = 1 }
 	}
+
+## Romania Balkan dominace ##
+
+	#intergate bulgaria
+	puppet_bulgaria = {
+		picture = create_romania
+
+		potential = {
+			NOT = { has_country_flag = puppet_bulgaria }
+			Tag = ROM
+			exists = BUL
+		}
+
+		allow = {
+        war = no
+        nationalism_n_imperialism = 1
+}
+
+		effect = {
+			set_country_flag = puppet_bulgaria
+			badboy = 20
+			add_casus_belli = {
+	target = BUl
+	type = make_puppet
+	months = 36
+		}
+
+		ai_will_do = {
+			factor = 1
+             modifier = { factor = 0 badboy = 0.16 }
+
+
+			}
+		}
+	}
+	
+	#Free Balkans
+	Free_Bulgaria = {
+		picture = create_romania
+
+		potential = {
+			NOT = { has_country_flag = Free_Bulgaria}
+			Tag = ROM
+			NOT = { exists = BUL }
+		    exists = TUR
+			
+		}
+
+		allow = {
+        war = no
+        nationalism_n_imperialism = 1
+}
+
+		effect = {
+			set_country_flag = Free_Bulgaria
+			badboy = 10
+			add_casus_belli = {
+	target = TUR
+	type = free_peoples
+	months = 36
+		}
+
+		ai_will_do = {
+			factor = 1
+             modifier = { factor = 0 badboy = 0.6}
+
+
+			}
+		}
+	}
 }
