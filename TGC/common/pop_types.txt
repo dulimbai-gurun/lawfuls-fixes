@@ -528,20 +528,21 @@ migration_chance = {
 	}
 
 	modifier = {
-		factor = 0.4
+		factor = 0.6
 		THIS = {
 			is_culture_group = polish_culture_group
 		}
 		#NOT = { unemployment = 0.1 }
 		location = {
-			controlled_by = owner
-			OR = {
-				state_id = 701
+		    OR = {
 				state_id = 682
+				state_id = 699
+				state_id = 3323
+				state_id = 708
 				state_id = 690
-				state_id = 695
+				state_id = 696
+			} 
 			}
-		}
 		country = {
 			is_greater_power = yes
 			is_culture_group = germanic
@@ -1450,16 +1451,20 @@ emigration_chance = {
 		location = { controlled_by = owner }
 	}
 
-	#yeahyeahyeah. I know nabolidaboli started emigrating en masse in 70s/80s, but give me a break will ya? i'm an emotional man, I like a tablespoon of non-medigan emigrants
-
+    #a friend of a friend, not a friend of ours, tells me, nabolidaboli are leaving in buckets. whole bunch of em, packing up and beaching at elis island, going ova to the medigans
+	#i say a salut', good for them, eh? whadayagonnaaboutit huh? they go, they go
 	#which part of the boot are you from, hun?
 	modifier = {
 		factor = 0.5
 		THIS = {
 			has_pop_culture = south_italian
 		}
-		NOT = { year = 1879 }
-		#unemployment = 0.1
+		year = 1875
+		NOT = { unemployment = 0.1 }
+		country = {
+			primary_culture = north_italian
+			is_greater_power = yes
+		}
 		location = { controlled_by = owner }
 	}
 
@@ -1484,7 +1489,7 @@ emigration_chance = {
 			primary_culture = south_german
 			is_greater_power = yes
 		}
-		NOT = { year = 1879 }
+		NOT = { year = 1899 }
 		#unemployment = 0.1
 		location = { controlled_by = owner }
 	}
@@ -1532,12 +1537,189 @@ emigration_chance = {
 	#Boost to early German emigration
 	#krauts geraus
 	modifier = {
-		factor = 0.6
+		factor = 0.65
 		THIS = {
-			has_pop_culture = north_german
+			is_culture_group = germanic
 		}
-		NOT = { year = 1869 }
-		#unemployment = 0.1
+		NOT = { year = 1870 }
+		NOT = { unemployment = 0.1 }
+		country = {
+			NOT = {
+				has_country_flag = greater_germany_achieved
+				has_country_flag = freistaaten
+			}
+		}
+		location = { controlled_by = owner }
+	}
+	
+	#krauts settler state emigration
+	modifier = {
+		factor = 0.4
+		THIS = {
+			is_culture_group = germanic
+		}
+		NOT = { year = 1900 }
+		NOT = { unemployment = 0.1 }
+		country = {
+				has_country_flag = greater_germany_achieved
+				NOT = { has_country_flag = reduce_settler_numbers }
+		}
+		location = { controlled_by = owner }
+	}
+	
+	#russiaflav
+	modifier = {
+		factor = 10
+		THIS = {
+			is_culture_group = pan_romanian
+		}
+		#NOT = { year = 1870 }
+		#NOT = { unemployment = 0.1 }
+		country = {
+		        primary_culture = russian
+				has_country_flag = transylvanian_compromise
+				NOT = { has_country_flag = stop_le_romanians }
+		}
+		location = { controlled_by = owner }
+	}
+	
+	
+	#krauts geraus
+	modifier = {
+		factor = 10
+		THIS = {
+			is_culture_group = germanic
+		}
+		#NOT = { year = 1870 }
+		#NOT = { unemployment = 0.1 }
+		country = {
+		        primary_culture = russian
+		}
+		has_global_flag = greatererst_germany_achieved
+		location = { controlled_by = owner }
+	}
+	
+	modifier = {
+		factor = 3
+		THIS = {
+			has_pop_culture = ashkenazi
+		}
+		#NOT = { year = 1870 }
+		#NOT = { unemployment = 0.1 }
+		country = {
+		        primary_culture = russian
+		}
+		has_global_flag = greaterer_germany_achieved
+		location = { controlled_by = owner }
+	}
+	
+	#Greater Germany Minorities more likely to emigrate, instead
+	modifier = {
+		factor = 1.1 #1.5
+		THIS = {
+		OR = {
+			has_pop_culture = hungarian
+			has_pop_culture = czech
+			has_pop_culture = slovak
+			has_pop_culture = romanian
+			has_pop_culture = north_italian
+			has_pop_culture = serb
+			has_pop_culture = croat
+			#has_pop_culture = polish
+			has_pop_culture = ukrainian
+			}
+		}
+		#NOT = { year = 1870 }
+		#NOT = { unemployment = 0.1 }
+		country = {
+		    is_greater_power = yes
+			is_culture_group = germanic
+			has_country_flag = greater_germany_achieved
+		}
+		location = { controlled_by = owner }
+	}
+	
+	#Greater Germany Minorities more likely to emigrate, instead
+	modifier = {
+		factor = 0.5 #1.5
+		THIS = {
+		OR = {
+			has_pop_culture = hungarian
+			has_pop_culture = czech
+			has_pop_culture = slovak
+			has_pop_culture = romanian
+			has_pop_culture = north_italian
+			has_pop_culture = serb
+			has_pop_culture = croat
+			#has_pop_culture = polish
+			has_pop_culture = ukrainian
+			}
+		}
+		#NOT = { year = 1870 }
+		#NOT = { unemployment = 0.1 }
+		country = {
+		    is_greater_power = yes
+			is_culture_group = germanic
+			has_country_flag = greater_germany_achieved
+			has_country_flag = encourage_minorities_to_go_away
+		}
+		location = { controlled_by = owner }
+	}
+	
+	#CPL Poland emigration
+	modifier = {
+		factor = 1.4 #6.5
+		THIS = { has_pop_culture = polish }
+		#NOT = { year = 1870 }
+		#NOT = { unemployment = 0.1 }
+		country = {
+		    is_greater_power = yes
+			is_culture_group = germanic
+			has_country_flag = greater_germany_achieved
+			has_country_flag = le_polish_strip
+			NOT = { has_country_flag = polish_exodus_stopped }
+		}
+		location = {
+		    OR = {
+				state_id = 682
+				state_id = 699
+				state_id = 3323
+				state_id = 708
+				state_id = 690
+				state_id = 696
+			} 
+			}
+	}
+	
+	#CPL Poland emigration Eastern Workers
+	modifier = {
+		factor = 2
+		AND = {
+		THIS = { OR = { has_pop_culture = ashkenazi has_pop_culture = polish } }
+		THIS = { strata = poor }
+		}
+		country = {
+		    is_greater_power = no
+			primary_culture = polish
+			has_country_flag = our_workers_in_germany
+		}
+		has_global_flag = german_welcomes_eastern_workers
+		location = { controlled_by = owner }
+	}
+	
+	#Ukraine emigration Eastern Workers
+	modifier = {
+		factor = 2
+		AND = {
+		THIS = { OR = { has_pop_culture = ashkenazi has_pop_culture = ukrainian } }
+		THIS = { strata = poor }
+		}
+		country = {
+		    is_greater_power = no
+			primary_culture = ukrainian
+			has_country_flag = our_workers_in_germany
+		}
+		has_global_flag = german_welcomes_eastern_workers
 		location = { controlled_by = owner }
 	}
 
@@ -1547,12 +1729,13 @@ emigration_chance = {
 		THIS = {
 		has_pop_culture = south_german
 		}
-		NOT = { year = 1869 }
-		#unemployment = 0.1
+		NOT = { year = 1875 }
+		NOT = { unemployment = 0.1 }
 		location = { controlled_by = owner }
 		country = {
 			is_greater_power = no
 			is_culture_group = germanic
+			NOT = { has_country_flag = freistaaten }
 		}
 	}
 
@@ -1631,6 +1814,7 @@ emigration_chance = {
 			NOT = { average_consciousness = 7 }
 			#NOT = { has_country_flag = liberal_revolution_fired }
 			#NOT = { has_country_flag = liberal_revolution_in_progress }
+			NOT = { has_country_flag = freistaaten }
 		}
 	}
 
@@ -1650,6 +1834,7 @@ emigration_chance = {
 			NOT = { average_consciousness = 8 }
 			#NOT = { has_country_flag = liberal_revolution_fired }
 			#NOT = { has_country_flag = liberal_revolution_in_progress }
+			NOT = { has_country_flag = freistaaten }
 		}
 	}
 
@@ -1669,6 +1854,7 @@ emigration_chance = {
 			NOT = { vassal_of = RUS }
 			NOT = { war_exhaustion = 1 }
 			NOT = { average_consciousness = 7 }
+			NOT = { has_country_flag = freistaaten }
 		}
 	}
 
@@ -2325,6 +2511,46 @@ assimilation_chance = {
 			has_pop_culture = karamanlides
 			has_pop_culture = pomak
 		}
+	}
+	
+	modifier = {
+		factor = 1000
+		has_pop_culture = czech
+		country = { has_country_flag = germanization_BOH
+                    is_culture_group = germanic 
+					NOT = { has_country_flag = stop_germanization } }
+		has_culture_core = yes
+	}
+	
+	modifier = {
+		factor = 28
+		has_pop_culture = slovak
+		country = { has_country_flag = germanization_BOH
+                    is_culture_group = germanic 
+					NOT = { has_country_flag = stop_germanization } }
+		has_culture_core = yes
+	}
+	
+	modifier = {
+		factor = 30
+		has_pop_culture = polish
+		country = { has_country_flag = germanization_pzn
+                    is_culture_group = germanic 
+					NOT = { has_country_flag = stop_germanization } }
+		has_culture_core = yes
+	}
+	
+	modifier = {
+		factor = 20
+		OR = {
+		has_pop_culture = slovene
+		has_pop_culture = romansh
+		has_pop_culture = croat
+		}
+		country = { has_country_flag = germanization_sud
+                    is_culture_group = germanic 
+					NOT = { has_country_flag = stop_germanization_south } }
+		has_culture_core = yes
 	}
 
 	modifier = {

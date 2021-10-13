@@ -2072,7 +2072,10 @@ claim_bahrain_qatar_peninsula = {
 			modifier = {
 				factor = 0
 				NOT = {
+				    AND = {
 					tag = ENG
+					year = 1900
+					}
 				}
 			}
 		}

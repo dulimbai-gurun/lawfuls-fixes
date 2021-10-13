@@ -30,7 +30,7 @@ guard = {
 		small_arms = 0.003 #0.015
 		canned_food = 0.007 # 0.08
 		ammunition = 0.01 #0
-		fruit = 0.02 #test
+		fruit = 0.08 #test
 	}
 	
 

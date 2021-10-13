@@ -13,6 +13,7 @@ political_decisions = {
 				truce_with = HRT
 				has_global_flag = herat_expedition
 			}
+			NOT = { has_global_flag = russia_expands_the_great_game }
 		}
 
 		allow = {
@@ -69,6 +70,7 @@ political_decisions = {
 				has_global_flag = anglo_persian_war
 				has_global_flag = second_herat_expedition
 			}
+			NOT = { has_global_flag = russia_expands_the_great_game }
 		}
 
 		allow = {

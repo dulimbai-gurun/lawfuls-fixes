@@ -24,6 +24,7 @@ tank = {
 		canned_food = 10
 		regular_clothes = 10
 		fuel = 10
+		steel = 50
 	}
 	
 	supply_consumption = 1.0
@@ -34,6 +35,7 @@ tank = {
 		fuel = 0.03
 		regular_clothes = 0.004 #0
 		ammunition = 0.01
+		steel = 0.03
 	}
 	
 
