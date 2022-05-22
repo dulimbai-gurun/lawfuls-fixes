@@ -4019,6 +4019,7 @@ country_event = {
 			name = "EVTOPTB10410"
 
 			set_country_flag = louis_deposed
+			set_country_flag = 2nd_monarchygov
 			remove_country_modifier = louis_napoleon_iii
 			any_greater_power = {
 				limit = { capital_scope = { continent = europe } }
@@ -4056,6 +4057,7 @@ country_event = {
 			name = "EVTOPTC10410"
 
 			set_country_flag = louis_deposed
+			set_country_flag = 2nd_monarchygov
 			remove_country_modifier = louis_napoleon_iii
 			any_greater_power = {
 				limit = { capital_scope = { continent = europe } }
@@ -4131,6 +4133,7 @@ country_event = {
 			name = "EVTOPTB10411"
 
 			set_country_flag = louis_deposed
+			set_country_flag = 2nd_monarchygov
 			remove_country_modifier = louis_napoleon_iii
 			prestige = 25
 			random_country = {

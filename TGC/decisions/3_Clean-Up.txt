@@ -563,6 +563,7 @@ political_decisions = {
 					}
 				}
 			}
+			is_vassal = yes
 		}
 		allow = {
 		}

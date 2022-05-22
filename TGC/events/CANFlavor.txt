@@ -2336,6 +2336,22 @@
 					CAN_60 = { remove_core = RPL add_core = CAN } # Northern Quebec
 				}
 				RPL = { all_core = { remove_core = RPL } }
+				random_country = { # If MTC is a player and Canada is not, MTC will become Canada
+					limit = {
+						tag = MTC
+						ai = no
+						THIS = { ai = yes }
+						exists = yes
+						vassal_of = RPL
+					}
+					all_core = { remove_core = RPL }
+					inherit = CAN
+					change_tag = CAN
+					random_owned = {
+						limit = { province_id = 46 }
+						owner = { capital = 46 }
+					}
+				}
 				random_country = { # If RPL is a player and Canada is not, RPL will become Canada
 					limit = {
 						tag = RPL
@@ -2351,6 +2367,18 @@
 						limit = { province_id = 46 }
 						owner = { capital = 46 }
 					}
+				}
+				random_country = { #Red River Colony annexed to Canada
+					limit = {
+						tag = MTC
+						OR = {
+							ai = yes
+							THIS = { ai = no }
+						}
+						exists = yes
+						vassal_of = RPL
+					}
+					annex_to = CAN
 				}
 				random_country = { # Else annex RPL to Canada
 					limit = {
